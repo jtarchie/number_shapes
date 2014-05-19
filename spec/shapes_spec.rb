@@ -3,7 +3,7 @@ require 'pry'
 require_relative '../lib/map'
 
 describe "When finding contiguous shapes on map" do
-  let(:shapes) { Map.from_grid(grid).shapes.count }
+  let(:shapes) { Map.from_grid(grid).shapes_count }
 
   context "for a single point" do
     context "which is active" do
@@ -47,6 +47,14 @@ describe "When finding contiguous shapes on map" do
 
       it "returns two shapes" do
         expect(shapes).to eq 2
+      end
+    end
+
+    context "on multiple lines" do
+      let(:grid) { "***.***\n**.....\n...*..." }
+
+      it "returns three shapes" do
+        expect(shapes).to eq 3
       end
     end
   end
