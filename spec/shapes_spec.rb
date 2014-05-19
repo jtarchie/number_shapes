@@ -57,5 +57,19 @@ describe "When finding contiguous shapes on map" do
         expect(shapes).to eq 3
       end
     end
+
+    context "example from interview" do
+      let(:grid) do
+        "***....***.......\n" +
+        "*......***..***..\n" + 
+        "***....***..*.*..\n" +
+        "*...........***..\n" +
+        "***..............\n"
+      end
+
+      it "returns three shapes" do
+        expect(shapes).to eq 3
+      end
+    end
   end
 end
